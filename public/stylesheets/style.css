@@ -1,0 +1,437 @@
+/*
+ * 画面全体に関する設定
+ */
+body {
+    font: 14px "Lucida Grande", Meiryo, Helvetica, Arial, serif;
+}
+
+a {
+    color: rgb(143, 140, 140);
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+a:hover{
+      color: black;
+}
+a::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #333;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
+}
+a:hover::after {
+    transform: scale(1, 1);
+}
+  
+
+p {
+    white-space: pre-wrap;  /*コメントの改行表示*/
+}
+
+div {
+    margin: 20px 0px;
+}
+
+#mymessage {
+    color: #FF0000;
+}
+
+#private_message {
+    color: #00FFFF;
+}
+
+.row {
+    margin: 20px;
+}
+
+/*
+ * ボタンの共通設定
+ */
+.common-button {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border: none;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+.common-button:active{
+    -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+
+
+/*ヘッダー設定*/
+
+
+/*トップ画面（index.hbs）に関する設定*/
+
+.title{
+  font-family: serif;
+  position: relative;
+  padding: 1em .5rem;
+}
+.title h1{
+  text-shadow: 3px 3px 4px rgba(0,0,0,0.3);
+}
+.title:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  content: '';
+  border-radius: 3px;
+  background-image: -webkit-gradient(linear, right top, left top, from(#2af598), to(#009efd));
+  background-image: -webkit-linear-gradient(right, #2af598 0%, #009efd 100%);
+  background-image: linear-gradient(to left, #2af598 0%, #009efd 100%);
+}
+.intro{
+  text-align: center;
+  font-family: serif;
+  margin-top: 8em;
+}
+.intro h2{
+  font-size: 3em;
+}
+.intro h3{
+  margin-top: .7em;
+  font-size: 2em;
+  color: rgb(104, 103, 103);
+}
+.account_info{
+    text-align:center ;  
+    margin:0 auto ;
+    width: 55em;
+    background-color: white;
+}
+.account_info h3{
+  text-align: center;
+  color: rgb(100, 99, 99);
+  font-size: 2em;
+  margin-top:2em;
+}
+.home a {
+  color: black;
+  font-size: 2.5em;
+  letter-spacing: 7px;
+  font-weight: bold;
+  padding: .4rem 1rem;
+  border-left: 5px solid rgb(60, 156, 235);
+  /*border-right: 5px solid rgb(60, 235, 197);*/
+  width: 20em;
+  background: #f4f4f4;
+}
+a:hover{
+    color: black;
+}
+.p center{
+  text-align:center !important;  
+  margin:0 auto !important;
+}
+
+
+
+/*新規登録画面*/
+.register{
+    /*background-color: rgb(202, 244, 250);*/
+    text-align: center;
+}
+.main-title{
+    margin-top: 2em;
+    font-size: 40px;
+}
+.w-50{
+    margin-top: 45px;
+    font-size: 1.3em;
+    width: 19em !important;
+    line-height: 1.25;
+    color: black;
+    background-color: white;
+    border: solid 3px #67c5ff;
+    border-radius: 8px;
+}
+.w-50:hover{
+    background-color:#67c5ff;
+    color: white;
+}
+.w-50:active::before{
+    color: white;
+    border: solid 3px #44b3f8;
+}
+.form_register{
+  font-family: serif;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 40px;
+  line-height: 1.5;
+}
+.form_register input{
+  font-size: 22px;
+  width: 28em;
+}
+.to_top{
+  margin-top: 100px;
+  font-size: 1.7em;
+  margin-right : 19em;
+}
+
+
+/*ログイン画面*/
+.login{
+    /*background-color: rgb(202, 244, 250);*/
+    background-color: white;
+    text-align: center;
+}
+.form_login{
+    font-family: serif;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 40px;
+    line-height: 1.5;
+}
+.form_login input{
+    font-size: 22px;
+    width: 28em;
+}
+.login h3{
+    margin-top: 3em;
+    font-size: 30px;
+}
+
+
+
+/*
+ * チャットルーム画面（room.hbs）に関する設定
+ */
+.room-login_user {
+    font-family: serif;
+    font-size: 1.5em;
+    margin-left: 1em;
+ }
+
+.room-message {
+
+}
+
+.room-message_textarea {
+    width: 500px;
+
+    font: 15px/24px serif;
+	box-sizing: border-box;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	border: 1px solid #1b2538;
+	border-radius: 4px;
+}
+.room-message_textarea:focus{
+    border: 1px solid #67c5ff;
+	outline: none;
+	box-shadow: 0 0 5px 1px  #67c5ff;
+}
+
+.room-submit {
+
+}
+.room-submit_textarea {
+
+    font: 15px/24px serif;
+	box-sizing: border-box;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	border: 1px solid #1b2538;
+	border-radius: 4px;
+}
+.room-submit_textarea:focus{
+    border: 1px solid #67c5ff;
+	outline: none;
+	box-shadow: 0 0 5px 1px  #67c5ff;
+}
+
+.room-publish_button {
+
+}
+
+.room-memo_button {
+
+}
+
+.room-thread {
+    position: relative;
+}
+
+#thread .message-div{
+    display: flex;
+    align-items: baseline;
+}
+
+#thread .message{
+    display: flex;
+    width: fit-content;
+    position: relative;
+    margin-left: 0.5em;
+    padding: 0.5em 0.5em;
+    border-radius: 12px;
+    background: #d4e2fa;
+}
+#thread .memo{
+    display: flex;
+    width: fit-content;
+    position: relative;
+    margin-left: 0.5em;
+    padding: 0.5em 0.5em;
+    border-radius: 12px;
+    background: #fff9a2;
+}
+#thread .mymessage{
+    display: flex;
+    width: fit-content;
+    position: relative;
+    margin-left: 0.5em;
+    padding: 0.5em 0.5em;
+    border-radius: 12px;
+    background: #ebb1de;
+}
+#thread .mymessage::after{
+    content: "";
+  display: inline-block;
+  position: absolute;
+  top: 18px; 
+  left: -24px;
+  border: 12px solid transparent;
+  border-right: 12px solid #ebb1de;
+}
+
+#thread .menu{
+    margin-left: 0.5em;
+    padding: 0.5em 0.5em;
+    border-radius: 12px;
+    background: #e2e2e2;
+}
+
+#thread .menu.menu-hidden{
+  display: none;
+}
+
+#thread .menu-list{
+    display: block;
+    margin: 0.2em 0 0.2em 0.2em;
+    border: none;
+    background: #e2e2e2;
+}
+#thread .menu-list:hover{
+    background-color: #cfcfcf;
+    background-position: -100% 100%;
+}
+
+#thread .privatemessage{
+    display: flex;
+    width: fit-content;
+    position: relative;
+    margin-left: 0.5em;
+    padding: 0.5em 0.5em;
+    border-radius: 12px;
+    background: #cad4d6;
+}
+#thread .privatemessage::after{
+    content: "";
+  display: inline-block;
+  position: absolute;
+  top: 18px; 
+  left: -24px;
+  border: 12px solid transparent;
+  border-right: 12px solid #cad4d6;
+}
+
+#thread .reply{
+    width: fit-content;
+    margin: 0 0 0 3rem;
+}
+#thread .reply_publish{
+    display: flex;
+}
+#reply_publish{
+    margin-left: 1rem;
+}
+
+#thread p{
+    margin: 0 1rem 0 0;
+}
+
+#thread input{
+    height: min-content;
+}
+
+#thread .option_btn{
+    margin-top: 0.2em;
+    padding: 0.5em 0.7em;
+    border-bottom: none;
+    background: #7fa2f0;
+    border-right: solid 4px #627295;
+    transform: rotateZ(90deg);
+}
+#thread .option_btn:active{
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);/*下に動く*/
+    transform: rotateZ(90deg);
+    border-right: none;/*線を消す*/
+}
+
+#thread .remove_btn{
+    padding: 0.2em 0.5em 0.2em 0.5em;
+}
+
+.logout{
+    margin: 0 0 3em 2em;
+}
+
+.room-exit {
+
+}
+
+.room-exit_button {
+}
+
+.exit{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+    color: rgb(143, 140, 140);
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+.exit:hover{
+    color: black;
+}
+.exit::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #333;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
+}
+.exit:hover::after {
+    transform: scale(1, 1);
+}

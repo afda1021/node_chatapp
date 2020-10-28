@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ログイン｜Node Chat Room</title>
+    </head>
+    <body>
+        <div class="login">
+            <div class="row title">
+                <h1>Node Chat Room</h1>
+            </div>
+            <h3>{{success_register}}</h3>
+            <p class="main-title">ログイン</p>
+            <form action="/login" method="post" class="form_login">
+                ユーザー名<br>
+                <input type="nmae" name="name" class="input" required><br><br>
+                パスワード<br>
+                <input type="password" name="password" class="input" required><br><br>
+                <p>{{noUser}}</p>
+                <button type="submit" class="submit w-50" onfocus="this.blur();">ログイン</button>
+
+            </form>
+            <a href="/" class="btn to_top" onfocus="this.blur();">トップへもどる</a>
+        </div>
+    </body>
+</html>

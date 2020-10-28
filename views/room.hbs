@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>チャットルーム｜Node Chat Room</title>
+    </head>
+    <body>
+        <div class="row title">
+            <h1>Node Chat Room</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <form method="post" action="/">
+                    <div class="room-login_user">
+                        {{success_login}}<br>
+                        ログインユーザ：{{userName}}さん
+                        <input id="userName" type="hidden" value={{userName}}>
+                    </div>
+                    <div class="room-message">
+                        <textarea id="message" rows="4" class="room-message_textarea" placeholder="投稿文を入力してください" onfocus="onFocus=true; selectedTextarea='message'" onblur="onFocus=false;"></textarea>
+                    </div>
+                    <div class="room-submit">
+                        <input type="button" value="投稿" class="common-button room-publish_button" onclick="publish();" id="publish_btn">
+                        <input type="button" value="メモ" class="common-button room-memo_button" onclick="memo();" id="memo_btn">
+                        <input type="text" id="private_name" placeholder="送信先のユーザ名を入力" class="room-submit_textarea">
+                        <input type="button" value="DMを送信" class="common-button room-private_button" onclick="private_message();">
+                        <input type="button" value="メッセージ並び替え" class="common-button room-sort_button" onclick="sort_message();">
+                    </div>
+                    <div class="room-thread">
+                        <div id="thread"></div>
+                    </div>
+                    <div class="room-exit">
+                        <a href="" class="btn logout" onclick="exit(); return false;" onfocus="this.blur();">退室する</a>
+                        <a href="/logout" class="btn logout" onfocus="this.blur();" onclick="exit();">ログアウト</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+<script src="/javascripts/socket.js"></script>
+<script src="/javascripts/enter.js"></script>
+<script src="/javascripts/publish.js"></script>
+<script src="/javascripts/private.js"></script>
+<script src="/javascripts/memo.js"></script>
+<script src="/javascripts/exit.js"></script>
